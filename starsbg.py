@@ -18,7 +18,7 @@ class StarsBackground:
         for i in range(self.numStars):
             layer = self.stars[i].layer
             pygame.draw.circle(screen, self.stars[i].color, self.stars[i].pos, (1 + layer) / 2)
-            self.stars[i].pos.y += (5 * dt) + (layer * dt * 10)
+            self.stars[i].pos.y += (12 * dt) + (layer * dt * 10)
 
             if self.stars[i].pos.y > self.screenHeight:
                 self.stars[i].pos.y = 0

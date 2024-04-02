@@ -1,9 +1,15 @@
-class LoadingScene:
+from scenes.scene import Scene
+
+class LoadingScene(Scene):
+
     def __init__(self, font, w, h):
-        self.text = font.render("Starting Up . . please wait", True, "green", "blue")
-        self.textRect = self.text.get_rect()
-        self.textRect.center = (w / 2, h / 2)
+        super().__init__(font, w, h, "Starting Up . . please wait")
+        self.counter=500
 
     def draw(self, screen, dt):
-        #i = 0
-        screen.blit(self.text, self.textRect)
+        Scene.draw(self, screen, dt)
+        self.counter-=1
+
+    
+    def transition(self):
+        return (self.counter <= 0)

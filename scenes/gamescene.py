@@ -1,5 +1,6 @@
-class GameScene:
+from scenes.scene import Scene
+
+class GameScene(Scene):
+
     def __init__(self, font, w, h):
-        self.text = font.render("Playing The Game", True, "green", "blue")
-        self.textRect = self.text.get_rect()
-        self.textRect.center = (w / 2, h / 2)
+        super().__init__(font, w, h, "Playing The Game")
